@@ -1,0 +1,90 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${SECT_MYSQL_HOST}:${SECT_MYSQL_PORT}/${SECT_MYSQL_DATABASE}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true&allowMultiQueries=true
+    username: ${SECT_MYSQL_USERNAME}
+    password: ${SECT_MYSQL_PASSWORD}
+    hikari:
+      maximum-pool-size: ${SECT_MYSQL_MAX_CONN}
+      minimum-idle: ${SECT_MYSQL_MIN_IDLE}
+      connection-timeout: 2000
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+    keep-alive: true
+  cloud:
+    openfeign:
+      okhttp:
+        enabled: true
+      httpclient:
+        max-connections: 1000
+        time-to-live: 60
+        time-to-live-unit: SECONDS
+        ok-http:
+          read-timeout: 5s
+      client:
+        config:
+          default:
+            connectTimeout: 2000
+            readTimeout: 5000
+          bi:
+            connectTimeout: 10000
+            readTimeout: 300000
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  data:
+    redis:
+      host: ${SECT_REDIS_HOST}
+      port: ${SECT_REDIS_PORT}
+      password: ${SECT_REDIS_PASSWORD}
+      lettuce:
+        pool:
+          enabled: true
+  cache:
+    type: redis
+  application:
+    name: "scaffold"
+  threads:
+    virtual:
+      enabled: true
+  rabbitmq:
+    host: ${DJDJ_AMQP_HOST}
+    port: ${DJDJ_AMQP_PORT}
+    username: ${DJDJ_AMQP_USER}
+    password: ${DJDJ_AMQP_PASSWORD}
+    virtual-host: ${DJDJ_AMQP_VHOST}
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+#xxl:
+#  job:
+#    admin:
+#      addresses: ${XXL_JOB_ADMIN_URI}
+#    accessToken: default_token
+#    executor:
+#      app-name: "scaffold"
+#      log-path:  /runtime/log/job
+#      log-retention-days: 30
+#      address: ${XXL_JOB_EXECUTOR_URI}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    resolve-schema-properties: true
+
+djdj:
+  domain: ${DJDJ_DOMAIN}
