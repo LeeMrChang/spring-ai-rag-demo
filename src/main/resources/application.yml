@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 9001
 
 spring:
   datasource:
@@ -57,7 +57,11 @@ spring:
     username: ${DJDJ_AMQP_USER}
     password: ${DJDJ_AMQP_PASSWORD}
     virtual-host: ${DJDJ_AMQP_VHOST}
-
+    #确认消息已发送到交换机(Exchange)
+    #publisher-confirms: true
+    publisher-confirm-type: correlated
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
 management:
   endpoint:
     health:
