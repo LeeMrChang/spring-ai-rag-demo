@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daily.cost.mapper.AssetSnapshotMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.daily.cost.entity.AssetSnapshot">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="balance" property="balance" />
+        <result column="is_hidden" property="isHidden" />
+        <result column="remark" property="remark" />
+        <result column="bank_id" property="bankId" />
+        <result column="bank_name" property="bankName" />
+        <result column="bank_subbranch" property="bankSubbranch" />
+        <result column="bank_no" property="bankNo" />
+        <result column="create_id" property="createId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_id" property="updateId" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+</mapper>
