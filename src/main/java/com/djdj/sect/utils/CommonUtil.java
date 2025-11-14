@@ -5,11 +5,14 @@ import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.lang.UUID;
 import cn.hutool.core.text.CharSequenceUtil;
 import com.djdj.sect.constant.SectConstant;
+import com.djdj.sect.feign.req.ExcelHeaderReq;
 import com.djdj.sect.feign.req.SectFundDataReq;
 import com.xxl.job.core.context.XxlJobHelper;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 
+import java.lang.reflect.Field;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -39,6 +42,19 @@ public class CommonUtil {
     public static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
         Map<Object, Boolean> seen = new ConcurrentHashMap<>();
         return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    }
+
+    /**
+     * 过滤出没有交集的元素
+     * @param a 数组1
+     * @param b 数组2
+     * @return 结果
+     */
+    public static Set<Long> filterNoIntersection(List<Long> a, List<Long> b) {
+        Set<Long> setA = new HashSet<>(a);
+        Set<Long> setB = new HashSet<>(b);
+        setA.removeAll(setB);
+        return setA;
     }
 
     /**
