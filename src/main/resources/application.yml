@@ -47,7 +47,7 @@ spring:
   cache:
     type: redis
   application:
-    name: "dailyCost"
+    name: "scaffold"
   threads:
     virtual:
       enabled: true

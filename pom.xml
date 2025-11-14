@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.daily.cost</groupId>
-    <artifactId>dailyCost</artifactId>
+    <groupId>com.djdj.sect</groupId>
+    <artifactId>scaffold</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>日常成本</description>
+    <description>门派数据分析</description>
 
     <properties>
         <java.version>21</java.version>

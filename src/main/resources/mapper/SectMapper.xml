@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djdj.sect.mapper.SectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.djdj.sect.entity.Sect">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="profile" property="profile" />
+        <result column="grade" property="grade" />
+        <result column="declaration" property="declaration" />
+        <result column="city_type" property="cityType" />
+        <result column="city_id" property="cityId" />
+        <result column="merchant_id" property="merchantId" />
+        <result column="status" property="status" />
+        <result column="contribution_value" property="contributionValue" />
+        <result column="fund" property="fund" />
+        <result column="glory_score" property="gloryScore" />
+        <result column="welfare_score" property="welfareScore" />
+        <result column="test_flag" property="testFlag" />
+        <result column="del_flag" property="delFlag" />
+        <result column="create_id" property="createId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_id" property="updateId" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+
+</mapper>
