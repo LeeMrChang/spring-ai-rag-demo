@@ -1,8 +1,6 @@
 package com.daily.cost;
 
 import cn.hutool.core.date.DateUtil;
-import com.daily.cost.entity.User;
-import com.daily.cost.service.IUserService;
 import jakarta.annotation.Resource;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -21,19 +19,25 @@ import java.math.BigDecimal;
 public class ISectServiceTest {
 
     @Resource
-    private IUserService userService;
+    private ISectService sectService;
 
     @SneakyThrows
     @Test
     void testBuildEntity() {
-        userService.saveOrUpdate(new User()
-                .setNickname("小美")
-                        .setRealName("李红敏")
-                        .setIdCardNumber("422802198406272181")
-                        .setProfile("https://djpub.imos.dongjiao.cc/upload_qp/img/20251107/434a83b52e191bed25e57d88fcd053cd.jpg")
-                        .setGender((short) 2)
-                        .setPhoneNumber("13695138652")
-                        .setTotalAssets(BigDecimal.valueOf(10000))
+        sectService.saveOrUpdate(new Sect()
+                .setId(100000069L)
+                .setName("深圳派")
+                .setProfile("/upload_qp/img/20241016/1e5f83b8b341e5639f9d868409271ed8.jpg")
+                .setGrade("15-3")
+                .setDeclaration("团队齐心~无所不能~携手同行~共创辉煌")
+                .setCityId(99L)
+                .setCityType(2)
+                .setMerchantId(88L)
+                .setStatus(true)
+                .setContributionValue(888)
+                .setGloryScore(BigDecimal.TEN)
+                .setWelfareScore(BigDecimal.TWO)
+                .setTestFlag(false)
                 .setCreateId(0L)
                 .setCreateTime(DateUtil.tomorrow())
                 .setUpdateId(0L)

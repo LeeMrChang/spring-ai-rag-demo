@@ -46,7 +46,7 @@ public class AssetSnapshot extends Model<AssetSnapshot> {
      * 账户类型（1-现金/2-银行卡/3-信用卡/4-投资）
      */
     @TableField("type")
-    private Short type;
+    private Boolean type;
 
     /**
      * 当前余额
@@ -58,7 +58,7 @@ public class AssetSnapshot extends Model<AssetSnapshot> {
      * 是否隐藏，0表示不隐藏，1表示隐藏
      */
     @TableField("is_hidden")
-    private Short isHidden;
+    private Boolean isHidden;
 
     /**
      * 备注

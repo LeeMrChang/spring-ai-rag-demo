@@ -40,7 +40,7 @@ public class LoanRecord extends Model<LoanRecord> {
      * 类型（1-借入/2-借出）
      */
     @TableField("type")
-    private Short type;
+    private Boolean type;
 
     /**
      * 金额
@@ -58,7 +58,7 @@ public class LoanRecord extends Model<LoanRecord> {
      * 状态（1-未还/2-已还/3-部分还）
      */
     @TableField("status")
-    private Short status;
+    private Boolean status;
 
     /**
      * 到期日期

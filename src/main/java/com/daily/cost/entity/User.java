@@ -58,7 +58,7 @@ public class User extends Model<User> {
      * 性别，0表示未知，1表示男性，2表示女性
      */
     @TableField("gender")
-    private Short gender;
+    private Boolean gender;
 
     /**
      * 手机号码

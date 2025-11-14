@@ -57,7 +57,7 @@ public class Ledger extends Model<Ledger> {
      * 是否默认账本：0-否；1-是
      */
     @TableField("is_default")
-    private Short isDefault;
+    private Boolean isDefault;
 
     /**
      * 创建人

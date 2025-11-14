@@ -45,7 +45,7 @@ public class Icon extends Model<Icon> {
      * 类型：1-收入/2-支出
      */
     @TableField("type")
-    private Short type;
+    private Boolean type;
 
     /**
      * 父级图标id（0表示无父级）

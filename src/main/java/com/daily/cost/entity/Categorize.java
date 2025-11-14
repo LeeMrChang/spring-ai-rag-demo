@@ -51,7 +51,7 @@ public class Categorize extends Model<Categorize> {
      * 类型（1-收入/2-支出/3-转账）
      */
     @TableField("type")
-    private Short type;
+    private Boolean type;
 
     /**
      * 父级分类id
@@ -63,7 +63,7 @@ public class Categorize extends Model<Categorize> {
      * 是否系统预设，0表示否，1表示是
      */
     @TableField("is_system")
-    private Short isSystem;
+    private Boolean isSystem;
 
     /**
      * 排序顺序
