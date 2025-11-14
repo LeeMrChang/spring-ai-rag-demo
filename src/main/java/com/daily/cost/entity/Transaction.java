@@ -52,7 +52,7 @@ public class Transaction extends Model<Transaction> {
      * 类型（1-收入/2-支出/3-转账/4-借入/5-借出）
      */
     @TableField("type")
-    private Boolean type;
+    private Short type;
 
     /**
      * 金额
@@ -64,7 +64,7 @@ public class Transaction extends Model<Transaction> {
      * 支付方式（1-支付宝/2-微信/3-现金等）
      */
     @TableField("payment_method")
-    private Boolean paymentMethod;
+    private Short paymentMethod;
 
     /**
      * 记录日期（含时分秒）
@@ -82,7 +82,7 @@ public class Transaction extends Model<Transaction> {
      * 报销状态（0-无报销,1-待报销,2-已报销,3-报销入账）
      */
     @TableField("reimburse_status")
-    private Boolean reimburseStatus;
+    private Short reimburseStatus;
 
     /**
      * 报销关联id（关联原始报销记录）

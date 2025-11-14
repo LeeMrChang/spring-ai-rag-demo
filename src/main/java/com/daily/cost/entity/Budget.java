@@ -64,7 +64,7 @@ public class Budget extends Model<Budget> {
      * 是否滚存到下月
      */
     @TableField("rollover_flag")
-    private Boolean rolloverFlag;
+    private Short rolloverFlag;
 
     /**
      * 创建人
