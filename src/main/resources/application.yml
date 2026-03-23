@@ -11,6 +11,22 @@ spring:
       maximum-pool-size: ${SECT_MYSQL_MAX_CONN}
       minimum-idle: ${SECT_MYSQL_MIN_IDLE}
       connection-timeout: 2000
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: gemma3:1b
+          temperature: 0.7
+      embedding:
+        options:
+          model: nomic-embed-text
+    vectorstore:
+      redis:
+        index: rag-knowledge-index
+        prefix: "doc:"
+        initialize-schema: true
+        uri: redis://localhost:6379
   main:
     allow-bean-definition-overriding: true
     allow-circular-references: true
@@ -40,7 +56,7 @@ spring:
     redis:
       host: ${SECT_REDIS_HOST}
       port: ${SECT_REDIS_PORT}
-      password: ${SECT_REDIS_PASSWORD}
+      password:
       lettuce:
         pool:
           enabled: true

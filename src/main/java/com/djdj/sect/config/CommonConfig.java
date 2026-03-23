@@ -10,6 +10,7 @@ import feign.RequestInterceptor;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.redisson.config.SingleServerConfig;
 import org.slf4j.MDC;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
@@ -79,10 +80,15 @@ public class CommonConfig {
     @Bean
     public RedissonClient redissonClient(RedisProperties properties) {
         Config config = new Config();
-        config.useSingleServer()
+        String password = properties.getPassword();
+        SingleServerConfig serverConfig = config.useSingleServer()
                 .setAddress("redis://" + properties.getHost() + ":" + properties.getPort())
-                .setDatabase(properties.getDatabase())
-                .setPassword(properties.getPassword());
+                .setDatabase(properties.getDatabase());
+//                .setPassword(properties.getPassword());
+        // 密码非空且非纯空格才设置
+        if (password != null && !password.isBlank()) {
+            serverConfig.setPassword(password);
+        }
         return Redisson.create(config);
     }
 
