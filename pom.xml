@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.djdj.sect</groupId>
-    <artifactId>scaffold</artifactId>
+    <artifactId>spring-ai-rag-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Spring AI + Ollama + Redis Vector RAG Demo</description>
 

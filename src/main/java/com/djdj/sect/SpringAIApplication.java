@@ -17,9 +17,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @OpenAPIDefinition(info = @Info(title = "spring项目脚手架", description = "spring项目脚手架", version = "v1"))
 @EnableTransactionManagement
 @EnableCaching
-public class ScaffoldApplication {
+public class SpringAIApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ScaffoldApplication.class, args);
+        SpringApplication.run(SpringAIApplication.class, args);
     }
 }
